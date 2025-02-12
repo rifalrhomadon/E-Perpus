@@ -1,0 +1,147 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* BODY */
+body {
+    display: flex;
+    height: 100vh;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* CONTAINER */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+}  
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    /* Header */
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .search-box {
+        margin: 10px 0;
+        width: 80%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 10px 0;
+        gap: 10px;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    /* Hero Section */
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero {
+        padding-top: 140px;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-image img {
+        max-width: 350px;
+        margin-top: 20px;
+    }
+
+    .cta {
+        margin-top: 15px;
+    }
+
+    .book-list {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .book-cover img {
+        max-width: 130px;
+    }
+
+    .featured-books h2,
+    .recommended-books h2 {
+        font-size: 1.8rem;
+    }
+
+    .book-list {
+        gap: 15px;
+    }
+
+    .book-items {
+        width: 160px;
+    }
+
+    .book-cover {
+        height: 240px;
+    }
+
+    .book-title {
+        font-size: 0.9rem;
+    }
+
+    .event-card {
+        flex-direction: column; /* Ubah jadi kolom jika layar kecil */
+        text-align: center;
+    }
+
+    .event-image {
+        max-width: 80%;
+    }
+
+    .event-text {
+        text-align: center;
+    }
+
+    .event-text h3 {
+        font-size: 35px;
+    }
+
+    .event-text h4 {
+        font-size: 26px;
+    }
+
+    .event-text p {
+        font-size: 16px;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .footer-logo, .footer-copyright, .footer-social {
+        flex: unset;
+        width: 100%;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+}

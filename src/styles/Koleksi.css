@@ -1,0 +1,131 @@
+/* SECTION KOLEKSI BUKU */
+.featured-books {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+}
+
+.featured-books h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* GRID KOLEKSI BUKU */
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* ITEM BUKU */
+.book-item {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    flex: 0 0 auto; /* Pastikan menggunakan flex untuk carousel */
+    width: 180px; /* Tentukan lebar tetap untuk item */
+}
+
+.book-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.book-item .book-title {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #5a2ca0;
+}
+
+.book-item .book-author {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* SAMPUL BUKU */
+.book-cover {
+    position: relative;
+    display: inline-block;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.book-cover img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* RATING DI ATAS SAMPUL */
+.rating {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(255, 215, 0, 0.9);
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* NAMA BUKU & PENULIS */
+.book-title {
+    display: block;
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #5a2ca0;
+}
+
+.book-author {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 5px;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+    padding-bottom: 20px; /* Tambahkan ruang agar teks terlihat */
+}
+
+.book-carousel {
+    display: flex;
+    align-items: center; /* Pastikan item tidak terpotong */
+    transition: transform 0.5s ease;
+    will-change: transform;
+}
+
+.book-item {
+    flex: 0 0 auto;
+    margin: 0 10px;
+    width: 180px;
+    min-height: 250px; /* Tambahkan tinggi minimum */
+    text-align: center; /* Pastikan teks berada di tengah */
+}
+
+.book-item.active {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.book-cover img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}

@@ -1,0 +1,93 @@
+/* SECTION EVENT */
+.event-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: white;
+}
+
+/* HEADER EVENT */
+.event-section h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 20px;
+}
+
+/* SECTION EVENT */
+.event-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: white;
+}
+
+/* HEADER EVENT */
+.event-section h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 20px;
+}
+
+/* EVENT CARD */
+.event-card {
+    display: flex;
+    flex-direction: row; /* Gambar di kiri, teks di kanan */
+    align-items: center; /* Rata tengah secara vertikal */
+    justify-content: center; /* Rata tengah secara horizontal */
+    text-align: left; /* Pastikan teks sejajar kiri */
+    background: linear-gradient(90deg, #1E90FF, #6A40AE);
+    border-radius: 15px;
+    padding: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    color: white;
+    position: relative;
+    gap: 20px; /* Beri jarak antara gambar dan teks */
+}
+
+/* GAMBAR EVENT */
+.event-image {
+    flex: 1; /* Gambar mengambil 1 bagian dari flexbox */
+    max-width: 40%; /* Batasi lebar gambar */
+    display: flex;
+    justify-content: center;
+}
+
+.event-image img {
+    width: 100%;
+    border-radius: 10px;
+    border: 3px solid #F7E600;
+}
+
+/* TEKS EVENT */
+.event-text {
+    flex: 1; /* Teks mengambil 1 bagian dari flexbox */
+    text-align: left;
+}
+
+/* Ukuran Font Sesuai Gambar */
+.event-text h3 {
+    font-size: 64px; /* LOMBA */
+    font-weight: bold;
+    color: #F7E600;
+    margin-bottom: 5px;
+}
+
+.event-text h4 {
+    font-size: 35px; /* KARYA TULIS ILMIAH 2025 */
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.event-text p {
+    font-size: 18px;
+    font-weight: normal;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 5px rgba(255, 255, 255, 0.5);
+}

@@ -1,0 +1,48 @@
+/* SECTION REKOMENDASI BUKU */
+.recommendation-section {
+    background-color: #6A40AE; /* Warna ungu sesuai gambar */
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.recommendation-section h2 {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* GRID LIST REKOMENDASI */
+.book-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* ITEM BUKU */
+.book-items {
+    width: 180px;
+    text-align: center;
+}
+
+.book-cover {
+    width: 100%;
+    height: 270px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.book-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* JUDUL BUKU */
+.book-title {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: white;
+    font-weight: bold;
+}

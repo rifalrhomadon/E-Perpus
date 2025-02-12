@@ -1,0 +1,417 @@
+/* === General Layout === */
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  background-color: #EDE7F6; /* Warna ungu muda */
+}
+
+/* === Sidebar === */
+.sidebar {
+  width: 250px;
+  background-color: #6F5CCF;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar__logo {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.sidebar__logo i {
+  font-size: 28px;
+  margin-right: 10px;
+}
+
+/* === Menu Sidebar (Menampilkan item ke bawah) === */
+.sidebar__menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* Membuat menu tersusun ke bawah */
+  gap: 12px; /* Jarak antar item */
+}
+
+.sidebar__item {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.sidebar__item a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  width: 100%;
+}
+
+.sidebar__item i {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+/* === Efek Hover dan Active === */
+.sidebar__item:hover {
+  background: #5A48B6;
+}
+
+.sidebar__item--active {
+  background: #4D3E97;
+  font-weight: bold;
+}
+
+/* === Logout Button === */
+.sidebar__logout {
+  margin-top: auto;
+}
+
+.sidebar__logout a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.sidebar__logout i {
+  margin-right: 10px;
+}
+
+/* === Main Content === */
+.content {
+  flex-grow: 1;
+  padding: 40px;
+  background: #EDE7F6;
+}
+
+.content h1 {
+  font-size: 24px;
+  padding-bottom: 10px;
+}
+
+.dashboard-content {
+  flex-grow: 1;
+  padding: 40px;
+  background: #EDE7F6;
+}
+
+.dashboard-content__title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.dashboard-content__welcome {
+  font-size: 18px;
+  color: #333;
+}
+
+/* === Manajemen Buku === */
+.book-management {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.book-management__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.book-management__title {
+  font-size: 10px;
+  font-weight: normal;
+  color: #000000;
+}
+
+/* === Button Tambah Buku === */
+.btn-tambah-buku {
+  background-color: #6F5CCF;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+}
+
+.btn-tambah-buku:hover {
+  background-color: #5A48B6;
+}
+
+/* === Table Styling === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background: white;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background: #e4e6ff;
+  font-weight: bold;
+}
+
+td img {
+  width: 100px;
+  height: auto;
+}
+
+/* Styling Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+  max-height: min-content;
+  overflow-y: auto; 
+}
+
+/* Styling Modal Content */
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 800px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif;
+}
+
+/* Styling Judul Form */
+.modal-content h2 {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #000000;
+}
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal popup */
+.modal-popup {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* Tombol close modal */
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Form styling */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Input fields */
+.form-container input,
+.form-container select,
+.form-container textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* Style tombol */
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.btn-cancel, .btn-submit {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-cancel {
+  background: #ccc;
+  color: black;
+}
+
+.btn-submit {
+  background: #5A67D8;
+  color: white;
+}
+
+/* Styling Form */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Styling Label */
+form label {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+textarea {
+  resize: none;
+}
+
+input[type="file"] {
+  border: none;
+}
+
+/* === Responsive Styling === */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 200px;
+  }
+  .content {
+    margin-left: 200px;
+    padding: 20px;
+  }
+  .modal-content {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  .sidebar__menu ul {
+    flex-direction: row;
+    gap: 8px;
+  }
+  
+  .content {
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  .dashboard-content__title {
+    font-size: 24px;
+  }
+
+  .dashboard-content__welcome {
+    font-size: 16px;
+  }
+
+  .book-management__title {
+    font-size: 12px;
+  }
+
+  .table-container {
+    width: 100%;
+    overflow-x: auto; /* Tambahkan scroll horizontal */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling di mobile */
+  }
+
+  th, td {
+    font-size: 10px;
+    padding: 5px;
+  }
+
+  td img {
+    max-width: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+  }
+  
+  .sidebar__menu ul {
+    flex-direction: column;
+  }
+
+  .book-management__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn-tambah-buku {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .modal-popup {
+    width: 95%;
+  }
+  th, td {
+    font-size: 8px;
+    padding: 4px;
+  }
+
+  td img {
+    max-width: 20px;
+  }
+}
+
