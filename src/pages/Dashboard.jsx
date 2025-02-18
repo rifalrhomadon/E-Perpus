@@ -19,8 +19,14 @@ function Dashboard() {
               </Link>
             </li>
             <li className="sidebar__item">
-              <Link to="/daftar">
-                <i className="fa fa-book" aria-hidden="true"></i>
+                <Link to="/daftar-member">
+                    <i className="fa-solid fa-users"></i>
+                    <span>Daftar Member</span>
+                </Link>
+            </li>
+            <li className="sidebar__item">
+              <Link to="/daftar-buku">
+                <i className="fa fa-book"></i>
                 <span>Daftar Buku</span>
               </Link>
             </li>
@@ -50,6 +56,38 @@ function Dashboard() {
       <main className="dashboard-content">
         <h1 className="dashboard-content__title">Dashboard</h1>
         <p className="dashboard-content__welcome">Selamat Datang, Admin!</p>
+
+        {/* Dashboard Cards */}
+        <div className="dashboard-cards">
+          <div className="dashboard-card">
+            <i className="fa-solid fa-users"></i>
+            <div>
+              <h3>150</h3>
+              <p>Member Terdaftar</p>
+            </div>
+          </div>
+          <div className="dashboard-card">
+            <i className="fa-solid fa-book"></i>
+            <div>
+              <h3>300</h3>
+              <p>Total Buku</p>
+            </div>
+          </div>
+          <div className="dashboard-card">
+            <i className="fa-solid fa-arrow-up"></i>
+            <div>
+              <h3>75</h3>
+              <p>Buku Dipinjam</p>
+            </div>
+          </div>
+          <div className="dashboard-card">
+            <i className="fa-solid fa-undo"></i>
+            <div>
+              <h3>20</h3>
+              <p>Buku Dikembalikan</p>
+            </div>
+          </div>
+        </div>
       </main>
     </div>
   );

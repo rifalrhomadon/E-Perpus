@@ -5,6 +5,52 @@ import '../styles/Admin.css';
 
 function Pengembalianbuku() {
   const [modalOpen, setModalOpen] = useState(false);
+  
+  // Data pengembalian buku
+  const [pengembalianData, setPengembalianData] = useState([
+    {
+      id: 1,
+      memberId: "ADSD54541",
+      isbn: "001235831",
+      title: "We Could Be Heroes",
+      category: "Novel Fantasi",
+      tanggalKembali: "02-01-2024",
+      status: "Belum Dikembalikan",
+      denda: 0
+    },
+    {
+      id: 2,
+      memberId: "ADSD54542",
+      isbn: "001255831",
+      title: "Rembulan Tenggelam Di Wajahmu",
+      category: "Novel Fiksi",
+      tanggalKembali: "20-01-2024",
+      status: "Belum Dikembalikan",
+      denda: 0
+    },
+  ]);
+
+  // Fungsi untuk menandai buku sebagai dikembalikan
+  const handleDikembalikan = (id) => {
+    setPengembalianData((prevData) =>
+      prevData.map((item) =>
+        item.id === id
+          ? { ...item, status: "Dikembalikan", denda: 0 }  // Jika dikembalikan, denda 0
+          : item
+      )
+    );
+  };
+
+  // Fungsi untuk menandai buku sebagai terlambat
+  const handleTerlambat = (id) => {
+    setPengembalianData((prevData) =>
+      prevData.map((item) =>
+        item.id === id
+          ? { ...item, status: "Terlambat", denda: 5000 } // Denda 5000 jika terlambat
+          : item
+      )
+    );
+  };
 
   return (
     <div className="dashboard-container">
@@ -22,9 +68,15 @@ function Pengembalianbuku() {
               </Link>
             </li>
             <li className="sidebar__item">
-              <Link to="/daftar">
-                <i className="fa fa-book"></i>
-                <span>Daftar Buku</span>
+              <Link to="/daftar-member">
+                <i className="fa-solid fa-users"></i>
+                  <span>Daftar Member</span>
+              </Link>
+            </li>
+            <li className="sidebar__item">
+              <Link to="/daftar-buku">
+                  <i className="fa fa-book"></i>
+                  <span>Daftar Buku</span>
               </Link>
             </li>
             <li className="sidebar__item">
@@ -78,25 +130,36 @@ function Pengembalianbuku() {
                 <th>Judul Buku</th>
                 <th>Kategori Buku</th>
                 <th>Tanggal Kembali</th>
+                <th>Status</th>
+                <th>Denda</th>
+                <th>Aksi</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>ADSD54541</td>
-                <td>001235831</td>
-                <td>We Could Be Heroes</td>
-                <td>Novel Fantasi</td>
-                <td>02-01-2024</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>ADSD54541</td>
-                <td>001255831</td>
-                <td>Rembulan Tenggelam Di Wajahmu</td>
-                <td>Novel Fiksi</td>
-                <td>20-01-2024</td>
-              </tr>
+              {pengembalianData.map((item, index) => (
+                <tr key={item.id}>
+                  <td>{index + 1}</td>
+                  <td>{item.memberId}</td>
+                  <td>{item.isbn}</td>
+                  <td>{item.title}</td>
+                  <td>{item.category}</td>
+                  <td>{item.tanggalKembali}</td>
+                  <td>{item.status}</td>
+                  <td>{item.denda > 0 ? `Rp ${item.denda}` : "-"}</td>
+                  <td>
+                    {item.status === "Belum Dikembalikan" && (
+                      <>
+                        <button className="btn-dikembalikan" onClick={() => handleDikembalikan(item.id)}>
+                          Tandai Dikembalikan
+                        </button>
+                        <button className="btn-terlambat" onClick={() => handleTerlambat(item.id)}>
+                          Tandai Terlambat
+                        </button>
+                      </>
+                    )}
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </section>

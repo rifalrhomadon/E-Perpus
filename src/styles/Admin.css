@@ -14,6 +14,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 100vh;
 }
 
 .sidebar__logo {
@@ -74,6 +75,10 @@
 /* === Logout Button === */
 .sidebar__logout {
   margin-top: auto;
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  border-radius: 8px;
 }
 
 .sidebar__logout a {
@@ -116,6 +121,45 @@
 .dashboard-content__welcome {
   font-size: 18px;
   color: #333;
+}
+
+/* Dashboard Cards */
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.dashboard-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+}
+
+.dashboard-card i {
+  font-size: 24px;
+  color: #2c3e50;
+}
+
+.dashboard-card h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.dashboard-card p {
+  margin: 0;
+  color: #666;
 }
 
 /* === Manajemen Buku === */
@@ -180,6 +224,82 @@ th {
 td img {
   width: 100px;
   height: auto;
+}
+
+.search-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.search-input {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.btn-search {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-search:hover {
+  background-color: #0056b3;
+}
+
+.btn-search i {
+  margin-right: 5px;
+}
+
+
+.btn-verifikasi {
+  background-color: #28a745; /* Warna hijau */
+  color: white; /* Warna teks putih */
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-verifikasi:hover {
+  background-color: #218838; 
+}
+
+.btn-verifikasi:active {
+  background-color: #1e7e34; 
+}
+
+.btn-hapus {
+  background-color: #c93232; 
+  color: white; 
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-hapus:hover {
+  background-color: #ae2b2b; 
+}
+
+.btn-hapus:active {
+  background-color: #9c2424; 
 }
 
 /* Styling Modal */
@@ -314,6 +434,131 @@ textarea {
 input[type="file"] {
   border: none;
 }
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-popup {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  text-align: center;
+}
+
+.modal-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-verify {
+  background-color: #4CAF50; /* Warna hijau untuk tombol verifikasi */
+  color: white; /* Warna teks putih */
+  border: none; /* Tanpa border */
+  padding: 10px 20px; /* Padding untuk ukuran tombol */
+  font-size: 16px; /* Ukuran font */
+  cursor: pointer; /* Tanda tangan kursor */
+  border-radius: 5px; /* Sudut tombol melengkung */
+  transition: background-color 0.3s ease; /* Efek transisi saat hover */
+}
+
+.btn-verify:hover {
+  background-color: #45a049; /* Warna hijau yang lebih gelap saat hover */
+}
+
+.btn-verify:active {
+  background-color: #388e3c; /* Warna hijau lebih gelap saat tombol ditekan */
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.btn-approve, .btn-reject {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  width: 48%; /* Membuat tombol memiliki ukuran yang sama */
+}
+
+.btn-approve {
+  background-color: #4CAF50; /* Warna hijau untuk tombol konfirmasi */
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.btn-approve:hover {
+  background-color: #45a049; /* Warna hijau lebih gelap saat hover */
+}
+
+.btn-approve:active {
+  background-color: #388e3c; /* Warna hijau lebih gelap saat tombol ditekan */
+}
+
+.btn-reject {
+  background-color: #f44336; /* Warna merah untuk tombol tolak */
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.btn-reject:hover {
+  background-color: #e53935; /* Warna merah lebih gelap saat hover */
+}
+
+.btn-reject:active {
+  background-color: #c62828; /* Warna merah lebih gelap saat tombol ditekan */
+}
+
+/* Styling umum untuk tombol */
+button {
+  padding: 10px 15px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Tombol "Tandai Dikembalikan" */
+.btn-dikembalikan {
+  background-color: #28a745; /* Hijau untuk status dikembalikan */
+  color: white;
+}
+
+.btn-dikembalikan:hover {
+  background-color: #218838; /* Warna hijau gelap saat hover */
+  transform: scale(1.05);
+}
+
+/* Tombol "Tandai Terlambat" */
+.btn-terlambat {
+  background-color: #dc3545; /* Merah untuk status terlambat */
+  color: white;
+}
+
+.btn-terlambat:hover {
+  background-color: #c82333; /* Warna merah gelap saat hover */
+  transform: scale(1.05);
+}
+
+/* Styling status terlambat */
+.terlambat {
+  color: #dc3545;
+  font-weight: bold;
+}
+
 
 /* === Responsive Styling === */
 @media (max-width: 1024px) {
