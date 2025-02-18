@@ -37,7 +37,7 @@ function Rekomendasi() {
     { img: Sugar, title: "Sugar and Spite", isbn: "555555", category: "Fiction" },
     { img: Dragon, title: "The Secret Dragon", isbn: "666666", category: "Fantasy" },
     { img: Arah, title: "Arah Kembali", isbn: "777777", category: "Drama" },
-    { img: Pirates, title: "Fiction Book Cover", isbn: "888888", category: "Adventure" },
+    { img: Pirates, title: "The Lost Pirates", isbn: "888888", category: "Adventure" },
     { img: Golden, title: "The Golden Tower", isbn: "999999", category: "Drama" },
     { img: Narasi, title: "Narasi Perihal Ayah", isbn: "101010", category: "Non-Fiction" }
   ];
